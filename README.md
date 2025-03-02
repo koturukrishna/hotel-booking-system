@@ -19,3 +19,8 @@ Tech Stack:
 This project showcases my expertise in full-stack development, authentication, and dynamic data handling in a real-world booking system. 
 
 The project link is here : https://krishnahotelbooking.netlify.app/
+ ![image](https://github.com/user-attachments/assets/87d23408-58fd-4786-91e9-e32331631687)
+
+ ![image](https://github.com/user-attachments/assets/45c33da3-120a-4ed6-8567-7862b77ebfac)
+
+
