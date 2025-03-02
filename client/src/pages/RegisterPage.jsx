@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "../styles/Register.scss";
 
 const RegisterPage = () => {
@@ -21,36 +21,42 @@ const RegisterPage = () => {
     });
   };
 
-  const [passwordMatch, setPasswordMatch] = useState(true)
+  const [passwordMatch, setPasswordMatch] = useState(true);
 
   useEffect(() => {
-    setPasswordMatch(formData.password === formData.confirmPassword || formData.confirmPassword === "")
-  })
+    setPasswordMatch(
+      formData.password === formData.confirmPassword ||
+        formData.confirmPassword === ""
+    );
+  }, [formData.password, formData.confirmPassword]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      const register_form = new FormData()
+      const register_form = new FormData();
 
       for (var key in formData) {
-        register_form.append(key, formData[key])
+        register_form.append(key, formData[key]);
       }
 
-      const response = await fetch("http://localhost:3001/auth/register", {
-        method: "POST",
-        body: register_form
-      })
+      const response = await fetch(
+        "https://hotel-booking-system-pesy.onrender.com/auth/register",
+        {
+          method: "POST",
+          body: register_form,
+        }
+      );
 
       if (response.ok) {
-        navigate("/login")
+        navigate("/login");
       }
     } catch (err) {
-      console.log("Registration failed", err.message)
+      console.log("Registration failed", err.message);
     }
-  }
+  };
 
   return (
     <div className="register">
@@ -109,18 +115,20 @@ const RegisterPage = () => {
             required
           />
           <label htmlFor="image">
-            <img src="/assets/addImage.png" alt="add profile photo" />
+            <img src="/assets/addImage.png" alt="addprofilephoto" />
             <p>Upload Your Photo</p>
           </label>
 
           {formData.profileImage && (
             <img
+              alt="imagekri"
               src={URL.createObjectURL(formData.profileImage)}
-              alt="profile photo"
               style={{ maxWidth: "80px" }}
             />
           )}
-          <button type="submit" disabled={!passwordMatch}>REGISTER</button>
+          <button type="submit" disabled={!passwordMatch}>
+            REGISTER
+          </button>
         </form>
         <a href="/login">Already have an account? Log In Here</a>
       </div>

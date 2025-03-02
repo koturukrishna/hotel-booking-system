@@ -20,7 +20,7 @@ const ListingDetails = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `https://hotel-booking-system-pesy.onrender.com/properties/${listingId}`,
         {
           method: "GET",
         }
@@ -74,13 +74,16 @@ const ListingDetails = () => {
         totalPrice: listing.price * dayCount,
       };
 
-      const response = await fetch("http://localhost:3001/bookings/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingForm),
-      });
+      const response = await fetch(
+        "https://hotel-booking-system-pesy.onrender.com/bookings/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingForm),
+        }
+      );
 
       if (response.ok) {
         navigate(`/${customerId}/trips`);
@@ -105,9 +108,12 @@ const ListingDetails = () => {
         <div className="photos">
           {listing.listingPhotoPaths?.map((item, index) => (
             <img
+              alt="kriimage"
               key={index}
-              src={`http://localhost:3001/${item.replace("public", "")}`}
-              alt="listing photo"
+              src={`https://hotel-booking-system-pesy.onrender.com/${item.replace(
+                "public",
+                ""
+              )}`}
             />
           ))}
         </div>
@@ -124,9 +130,9 @@ const ListingDetails = () => {
 
         <div className="profile">
           <img
-            src={`http://localhost:3001/${listing.creator.profileImagePath?.replace(
-              "public",
-              ""
+            alt="kriimage"
+            src={`https://hotel-booking-system-pesy.onrender.com/${listing.creator.profileImagePath?.replace(
+              "public"
             )}`}
           />
           <h3>

@@ -1,5 +1,5 @@
 import "../styles/Footer.scss";
-import { LocationOn, LocalPhone, Email } from "@mui/icons-material";
+import { LocalPhone, Email } from "@mui/icons-material";
 const Footer = () => {
   return (
     <div className="footer">
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         <div className="footer_right_info">
           <Email />
-          <p>dreamnest26@gmail.com</p>
+          <p>krishna26@gmail.com</p>
         </div>
         <img src="/assets/payment.png" alt="payment" />
       </div>

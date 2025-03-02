@@ -61,11 +61,11 @@ const Navbar = () => {
             <Person sx={{ color: variables.darkgrey }} />
           ) : (
             <img
-              src={`http://localhost:3001/${user.profileImagePath.replace(
+              src={`https://hotel-booking-system-pesy.onrender.com/${user.profileImagePath.replace(
                 "public",
                 ""
               )}`}
-              alt="profile photo"
+              alt="profile_image"
               style={{ objectFit: "cover", borderRadius: "50%" }}
             />
           )}

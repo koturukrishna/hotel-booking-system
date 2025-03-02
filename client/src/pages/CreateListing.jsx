@@ -137,10 +137,13 @@ const CreateListing = () => {
       });
 
       /* Send a POST request to server */
-      const response = await fetch("http://localhost:3001/properties/create", {
-        method: "POST",
-        body: listingForm,
-      });
+      const response = await fetch(
+        "https://hotel-booking-system-pesy.onrender.com/properties/create",
+        {
+          method: "POST",
+          body: listingForm,
+        }
+      );
 
       if (response.ok) {
         navigate("/");
