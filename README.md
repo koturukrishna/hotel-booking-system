@@ -17,3 +17,5 @@ Tech Stack:
 🔹 Authentication: JSON Web Token (JWT)
 
 This project showcases my expertise in full-stack development, authentication, and dynamic data handling in a real-world booking system. 
+
+The project link is here : https://krishnahotelbooking.netlify.app/
